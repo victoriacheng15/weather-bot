@@ -6,7 +6,11 @@ module.exports = {
 	async execute(client) {
 		console.log(`The bot ${client.user.tag} has logged in and online`);
 
-		const activities = ["the weather api", "the weather somewhere on the internet", "weather forecasting"];
+		const activities = [
+			"the weather api",
+			"the weather somewhere on the internet",
+			"weather forecasting",
+		];
 
 		setInterval(() => {
 			const status = activities[Math.floor(Math.random() * activities.length)];
