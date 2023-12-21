@@ -2,6 +2,7 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
+const {autoMessage} = require("./utils/autoMessage")
 
 const { BOT_TOKEN } = process.env;
 
@@ -24,6 +25,8 @@ for (const folder of functionFolders) {
 		require(path.join(__dirname, "functions", folder, file))(client);
 	}
 }
+
+autoMessage(client)
 
 client.handleCommands();
 client.handleEvents();
