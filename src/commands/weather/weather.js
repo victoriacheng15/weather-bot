@@ -33,7 +33,7 @@ module.exports = {
 		const location = formatLocation({ city, countryCode });
 		const weatherDesc = `Display weather information for ${location} on ${today}`;
 
-		const exampleEmbed = new EmbedBuilder()
+		const weatherEmbed = new EmbedBuilder()
 			.setColor(0x0099ff)
 			.setTitle("Weather Info")
 			.setDescription(weatherDesc)
@@ -70,6 +70,6 @@ module.exports = {
 				},
 			);
 
-		await interaction.reply({ embeds: [exampleEmbed], ephemeral: true });
+		await interaction.reply({ embeds: [weatherEmbed], ephemeral: false });
 	},
 };
