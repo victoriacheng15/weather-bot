@@ -59,7 +59,7 @@ module.exports = {
 					inline: false,
 				},
 				{
-					name: "Sunraise",
+					name: "Sunrise",
 					value: `${formatTime(sunrise)}`,
 					inline: true,
 				},
