@@ -1,5 +1,10 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const {getWeatherInfo, getTodayDate, formatTime, formatLocation}  = require("../../utils/fetchWeather");
+const {
+	getWeatherInfo,
+	getTodayDate,
+	formatTime,
+	formatLocation,
+} = require("../../utils/fetchWeather");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -22,7 +27,8 @@ module.exports = {
 		const city = interaction.options.getString("city");
 		const countryCode = interaction.options.getString("country-code");
 
-		const {temp, min_temp, max_temp, humidity, sunrise, sunset} = await getWeatherInfo(city, countryCode);
+		const { temp, min_temp, max_temp, humidity, sunrise, sunset } =
+			await getWeatherInfo(city, countryCode);
 		const today = getTodayDate();
 		const location = formatLocation({ city, countryCode });
 		const weatherDesc = `Display weather information for ${location} on ${today}`;
