@@ -1,10 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const {
-	getWeatherInfo,
-	formatTime,
-	getTodayDate,
-	formatLocation,
-} = require("../../utils/fetchWeather");
+const {getWeatherInfo, getTodayDate, formatTime, formatLocation}  = require("../../utils/fetchWeather");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -26,12 +21,11 @@ module.exports = {
 	async execute(interaction) {
 		const city = interaction.options.getString("city");
 		const countryCode = interaction.options.getString("country-code");
+
+		const {temp, min_temp, max_temp, humidity, sunrise, sunset} = await getWeatherInfo(city, countryCode);
 		const today = getTodayDate();
-		const info = await getWeatherInfo(city, countryCode);
-		const weatherDesc = `Display weather information for ${formatLocation({
-			city,
-			countryCode,
-		})} on ${today}`;
+		const location = formatLocation({ city, countryCode });
+		const weatherDesc = `Display weather information for ${location} on ${today}`;
 
 		const exampleEmbed = new EmbedBuilder()
 			.setColor(0x0099ff)
@@ -40,32 +34,32 @@ module.exports = {
 			.addFields(
 				{
 					name: "Temperature",
-					value: `${info.temp}c`,
+					value: `${temp}c`,
 					inline: false,
 				},
 				{
 					name: "Min Temperature",
-					value: `${info.min_temp}c`,
+					value: `${min_temp}c`,
 					inline: true,
 				},
 				{
 					name: "Max Temperture",
-					value: `${info.max_temp}c`,
+					value: `${max_temp}c`,
 					inline: true,
 				},
 				{
 					name: "Humidity",
-					value: `${info.humidity}%`,
+					value: `${humidity}%`,
 					inline: false,
 				},
 				{
 					name: "Sunraise",
-					value: `${formatTime(info.sunrise)}`,
+					value: `${formatTime(sunrise)}`,
 					inline: true,
 				},
 				{
 					name: "Sunset",
-					value: `${formatTime(info.sunset)}`,
+					value: `${formatTime(sunset)}`,
 					inline: false,
 				},
 			);
