@@ -1,9 +1,7 @@
 const { REST, Routes } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
-require("dotenv").config();
-
-const { BOT_TOKEN, CLIENT_ID, GUILD_ID } = process.env;
+const { BOT_TOKEN, CLIENT_ID, GUILD_ID } = require("../../utils/env");
 
 module.exports = (client) => {
 	client.handleCommands = async () => {

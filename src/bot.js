@@ -1,10 +1,8 @@
-require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
 const { autoMessage } = require("./utils/autoMessage");
-
-const { BOT_TOKEN } = process.env;
+const { BOT_TOKEN } = require("./utils/env");
 
 const client = new Client({
 	intents: [

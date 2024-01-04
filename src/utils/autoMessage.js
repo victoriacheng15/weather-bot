@@ -1,8 +1,6 @@
-require("dotenv").config();
 const schedule = require("node-schedule");
 const { getWeatherInfo } = require("./fetchWeather");
-
-const { CHANNEL_ID, CITY, COUNTRY_CODE } = process.env;
+const { CHANNEL_ID, CITY, COUNTRY_CODE } = require("./env");
 
 const time = "0 6 * * *";
 

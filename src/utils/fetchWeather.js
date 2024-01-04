@@ -1,4 +1,4 @@
-require("dotenv").config();
+const { API_KEY, API_HOST } = require("./env");
 
 class WeatherUtils {
 	async getWeatherInfo(city, country) {
@@ -7,8 +7,8 @@ class WeatherUtils {
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": process.env.API_KEY,
-				"X-RapidAPI-Host": process.env.API_HOST,
+				"X-RapidAPI-Key": API_KEY,
+				"X-RapidAPI-Host": API_HOST,
 			},
 		};
 
