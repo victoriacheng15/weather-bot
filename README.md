@@ -2,26 +2,6 @@
 
 Discord is a platform where everyone in the server can communicate through voice/video calls and text messages.
 
-## features
-
-### Commands
-
-- /ping
-   -  The `/ping` command replies with "pong!" and calculates the time it takes to process the command. This allows you to observe the delay in message editing, demonstrating the bot's ability to send and edit messages after a specified interval.
-- /weather
-   - The `/weather` command provides weather information for a chosen location. Enter the city name and country code (e.g., ca or us), and the bot will display temperature, minimum temperature, maximum temperature, humidity, sunrise time, and sunset time.
-
-### Messages
-
-- hello
-  - The `hello` message is a user-triggered command that prompts the bot to reply directly to the user.
-- hey
-  - The `hey` message is designed for users who want the bot to send their message to the entire channel, creating a broadcast effect.
-
-### Auto Message
-
-The auto message utilize `node-schedule` that allows you to schedule the time with cron to send weather message at a specific time of your choice.
-
 ## Getting started
 
 1. Installation
@@ -70,6 +50,26 @@ docker run -d --name=discord-bot .
 ```
 
 Alternatively, you can use the command `docker compose up` in the terminal, or right-click on the `docker-compose.yml` file and select `compose up`.
+
+## features
+
+### Commands
+
+- /ping
+   -  The `/ping` command replies with "pong!" and calculates the time it takes to process the command. This allows you to observe the delay in message editing, demonstrating the bot's ability to send and edit messages after a specified interval.
+- /weather
+   - The `/weather` command provides weather information for a chosen location. Enter the city name and country code (e.g., ca or us), and the bot will display temperature, minimum temperature, maximum temperature, humidity, sunrise time, and sunset time.
+
+### Messages
+
+- hello
+  - The `hello` message is a user-triggered command that prompts the bot to reply directly to the user.
+- hey
+  - The `hey` message is designed for users who want the bot to send their message to the entire channel, creating a broadcast effect.
+
+### Auto Message
+
+The auto message utilize `node-schedule` that allows you to schedule the time with cron to send weather message at a specific time of your choice.
 
 ## Links
 
