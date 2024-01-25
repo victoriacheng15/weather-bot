@@ -2,7 +2,7 @@
   "name": "weather-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "srtc/bot.js",
+  "main": "src/bot.js",
   "scripts": {
     "dev": "node --watch src/bot.js",
     "format": "npx @biomejs/biome format src/ --write"
