@@ -5,7 +5,8 @@
   "main": "src/bot.js",
   "scripts": {
     "dev": "node --watch src/bot.js",
-    "format": "npx @biomejs/biome format src/ --write"
+    "format": "npx @biomejs/biome format src/ --write",
+    "start": "node src/bot.js"
   },
   "keywords": [],
   "author": "",
